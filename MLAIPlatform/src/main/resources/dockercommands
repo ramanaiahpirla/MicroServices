@@ -1,14 +1,14 @@
 Dockerize Spring Boot Application
 
-docker build -t spring-boot:1.0 .
+docker build -t mlaiplatform-0.0.1-snapshot .
 
-docker run -d -p 8080:8080 -t spring-boot:1.0
+docker run -d -p 8080:8080 -t mlaiplatform-0.0.1-snapshot
 
 ==================================
 
-$ sudo docker run -d -p 80:8080 -t spring-boot:1.0
-$ sudo docker run -d -p 443:8443 -t spring-boot:1.0
-$ sudo docker run -d -p 80:8080 -p 443:8443 -t spring-boot:1.0
+$ sudo docker run -d -p 80:8080 -t mlaiplatform-0.0.1-snapshot
+$ sudo docker run -d -p 443:8443 -t mlaiplatform-0.0.1-snapshot
+$ sudo docker run -d -p 80:8080 -p 443:8443 -t mlaiplatform-0.0.1-snapshot
 
 ===================================================
 docker ps
@@ -18,19 +18,19 @@ Stop a container by container id. :
 docker stop 3e36a2c0c241
 
 How to deploy the container? :
-docker build -t spring-boot:1.0 .
+docker build -t mlaiplatform-0.0.1-snapshot .
 
 Tag first before push to docker hub.
 
 
-$ sudo docker image tag spring-boot:1.0 your_id/spring-boot:1.0
-$ sudo docker image push your_id/spring-boot:1.0
+$ sudo docker image tag mlaiplatform-0.0.1-snapshot your_id/mlaiplatform-0.0.1-snapshot
+$ sudo docker image push your_id/mlaiplatform-0.0.1-snapshot
 ``
 
 In production server.
 ```bash
-$ sudo docker pull your_id/spring-boot:1.0
-$ sudo docker run -d -p 80:8080 -t spring-boot:1.0
+$ sudo docker pull your_id/mlaiplatform-0.0.1-snapshot
+$ sudo docker run -d -p 80:8080 -t mlaiplatform-0.0.1-snapshot
 
 6.4 For SSL, declared the certificate (jks or p12) in the application.properties, start at port 8443 (configurable)
 
@@ -44,4 +44,4 @@ server.ssl.keyStoreType=PKCS12
 Starts the docker container and maps https 433 to 8443.
 
 
-$ docker run -d -p 443:8443 -t spring-boot:1.0
+$ docker run -d -p 443:8443 -t mlaiplatform-0.0.1-snapshot
