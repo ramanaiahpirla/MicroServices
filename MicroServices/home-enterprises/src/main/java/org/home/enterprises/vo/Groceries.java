@@ -71,6 +71,21 @@ public class Groceries implements Serializable{
 		return "Groceries [groceryId=" + groceryId + ", items=" + items + ", expDate=" + expDate + ", brand=" + brand
 				+ "]";
 	}
+	/**
+	 * @param groceryId
+	 * @param items
+	 * @param expDate
+	 * @param brand
+	 */
+	public Groceries(String groceryId, Map<String, List<Map<String, Double>>> items, Instant expDate, String brand) {
+		super();
+		this.groceryId = groceryId;
+		this.items = items;
+		this.expDate = expDate;
+		this.brand = brand;
+	}
+	
+	
 	
 	
 	
