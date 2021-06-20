@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HomeGroceriesController {
 	Logger logger = LoggerFactory.getLogger(HomeGroceriesController.class);
+	
 
 	@GetMapping("getAllGroceries")
 	public ResponseEntity<Groceries> getAllGroceries() {
