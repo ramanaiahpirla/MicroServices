@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.home.enterprises.vo.Groceries;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class HomeGroceriesController {
+	Logger logger = LoggerFactory.getLogger(HomeGroceriesController.class);
 
 	@GetMapping("getAllGroceries")
 	public ResponseEntity<Groceries> getAllGroceries() {
+		logger.debug("getAllGroceries () method Begin"); 
 		Groceries groceries = new Groceries();
 		groceries.setGroceryId(UUID.randomUUID().toString());
 		groceries.setBrand("");
@@ -44,6 +48,7 @@ public class HomeGroceriesController {
 		items.put("Oil", list1);
 		items.put("Rice", list2);
 		groceries.setItems(items);
+		logger.debug("getAllGroceries () method End"); 
 		return new ResponseEntity<Groceries>(groceries, HttpStatus.OK);
 	}
 
