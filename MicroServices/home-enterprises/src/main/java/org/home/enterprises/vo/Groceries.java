@@ -66,6 +66,12 @@ public class Groceries implements Serializable{
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+	@Override
+	public String toString() {
+		return "Groceries [groceryId=" + groceryId + ", items=" + items + ", expDate=" + expDate + ", brand=" + brand
+				+ "]";
+	}
+	
 	
 	
 }
