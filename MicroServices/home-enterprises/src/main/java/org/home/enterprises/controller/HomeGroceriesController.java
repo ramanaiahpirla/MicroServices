@@ -40,6 +40,7 @@ public class HomeGroceriesController {
 		rice.put("BPT", 1256.92);
 		rice.put("Basmati", 3120.22);
 		rice.put("74", 1320.55);
+		
 
 		List<Map<String, Double>> list1 = new ArrayList<Map<String, Double>>();
 		list1.add(oil);
