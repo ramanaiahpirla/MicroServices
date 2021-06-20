@@ -24,6 +24,7 @@ public class HomeGroceriesController {
 
 	@GetMapping("getAllGroceries")
 	public ResponseEntity<Groceries> getAllGroceries() {
+		
 		logger.debug("getAllGroceries () method Begin"); 
 		Groceries groceries = new Groceries();
 		groceries.setGroceryId(UUID.randomUUID().toString());
@@ -49,6 +50,7 @@ public class HomeGroceriesController {
 		items.put("Oil", list1);
 		items.put("Rice", list2);
 		groceries.setItems(items);
+		
 		logger.debug("getAllGroceries () method End"); 
 		return new ResponseEntity<Groceries>(groceries, HttpStatus.OK);
 	}
