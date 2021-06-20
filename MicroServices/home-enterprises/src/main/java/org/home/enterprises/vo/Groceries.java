@@ -71,6 +71,17 @@ public class Groceries implements Serializable{
 		return "Groceries [groceryId=" + groceryId + ", items=" + items + ", expDate=" + expDate + ", brand=" + brand
 				+ "]";
 	}
+	
+	
+	
+	/**
+	 * 
+	 */
+	public Groceries() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	/**
 	 * @param groceryId
 	 * @param items
