@@ -19,13 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class HomeGroceriesController {
-	Logger logger = LoggerFactory.getLogger(HomeGroceriesController.class);
 	
 
 	@GetMapping("getAllGroceries")
 	public ResponseEntity<Groceries> getAllGroceries() {
 		
-		logger.debug("getAllGroceries () method Begin"); 
 		Groceries groceries = new Groceries();
 		groceries.setGroceryId(UUID.randomUUID().toString());
 		groceries.setBrand("");
@@ -52,7 +50,6 @@ public class HomeGroceriesController {
 		items.put("Rice", list2);
 		groceries.setItems(items);
 		
-		logger.debug("getAllGroceries () method End"); 
 		return new ResponseEntity<Groceries>(groceries, HttpStatus.OK);
 	}
 
