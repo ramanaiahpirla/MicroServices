@@ -74,6 +74,48 @@ public class Groceries implements Serializable{
 	
 	
 	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((brand == null) ? 0 : brand.hashCode());
+		result = prime * result + ((expDate == null) ? 0 : expDate.hashCode());
+		result = prime * result + ((groceryId == null) ? 0 : groceryId.hashCode());
+		result = prime * result + ((items == null) ? 0 : items.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Groceries other = (Groceries) obj;
+		if (brand == null) {
+			if (other.brand != null)
+				return false;
+		} else if (!brand.equals(other.brand))
+			return false;
+		if (expDate == null) {
+			if (other.expDate != null)
+				return false;
+		} else if (!expDate.equals(other.expDate))
+			return false;
+		if (groceryId == null) {
+			if (other.groceryId != null)
+				return false;
+		} else if (!groceryId.equals(other.groceryId))
+			return false;
+		if (items == null) {
+			if (other.items != null)
+				return false;
+		} else if (!items.equals(other.items))
+			return false;
+		return true;
+	}
 	/**
 	 * 
 	 */
